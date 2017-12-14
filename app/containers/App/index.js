@@ -1,14 +1,11 @@
 
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as global from 'actions/global'
-
-import '../../style/base.less'
+import FastClick from 'fastclick'
+import 'style/base.less'
 
 @connect(
-    (state, props) => ({}),
-    (dispatch) => ({ actions: bindActionCreators({ ...global }, dispatch) })
+  (state, props) => ({}),
 )
 export default class App extends Component {
   constructor(props) {
@@ -16,11 +13,20 @@ export default class App extends Component {
     this.state = {
     }
   }
+
+  componentDidMount() {
+    window.addEventListener('load', () => {
+      FastClick.attach(document.body)
+    })
+  }
+  // region
+
+  // endregion
   render() {
-    const { location, children } = this.props
+    const { children } = this.props
     return (
       <div id="container" className="">
-        <div className="mainContent">{children}</div>
+        {children}
       </div>
     )
   }

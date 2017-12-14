@@ -1,22 +1,14 @@
-/*
- * @Author: dupi
- * @Date: 2017-06-28 17:16:12
- * @Last Modified by: duxianwei
- * @Last Modified time: 2017-12-14 11:15:40
- */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { hashHistory, Link } from 'react-router'
-import { Carousel, WhiteSpace, WingBlank, Flex, Icon, Grid, Button } from 'antd-mobile';
-import * as global from 'actions/global'
+import { Carousel, WhiteSpace, WingBlank, Flex, Icon, Grid, Button } from 'antd-mobile'
+import { pageTransition } from 'actions/common'
 
 
 @connect(
   (state, props) => ({
     config: state.config,
   }),
-  dispatch => bindActionCreators({ ...global }, dispatch)
 )
 export default class app extends Component {
   constructor(props) {
@@ -38,14 +30,14 @@ export default class app extends Component {
       this.setState({
         data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
       });
-    }, 100);
+    }, 100)
   }
 
   render() {
     const data = this.state.list.map(item => ({
       icon: (<Icon type={item.type} />),
       text: item.name,
-    }));
+    }))
     return (
       <div className="welcome" id="welcome">
         <Carousel
@@ -62,7 +54,7 @@ export default class app extends Component {
             style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
           >
             <img
-              src={`https://zos.alipayobjects.com/rmsportal/${ii}.png`}
+              src={'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png'}
               alt=""
               style={{ width: '100%', verticalAlign: 'top' }}
               onLoad={() => {
@@ -79,13 +71,13 @@ export default class app extends Component {
           <Button
             type="primary"
             href="#/login"
-            onClick={() => this.props.currentAnimate('right')}
+            onClick={() => this.props.dispatch(pageTransition('right'))}
           >退出</Button>
           <WhiteSpace />
           <Button
             type="primary"
-            href="#/login"
-            onClick={() => this.props.currentAnimate('normal')}
+            href="#/welcome1"
+            onClick={() => this.props.dispatch(pageTransition('normal'))}
           >welcome1</Button>
           <WhiteSpace />
         </WingBlank>

@@ -11,14 +11,7 @@ export function isArray(arr) {
 }
 
 const logOut = () => {
-  sessionStorage.removeItem('usercode')
-  sessionStorage.removeItem('userpwd')
-  sessionStorage.removeItem('token')
-  sessionStorage.removeItem('userid')
-  sessionStorage.removeItem('divisionid')
-  sessionStorage.removeItem('userinfo')
-  sessionStorage.removeItem('tabList')
-  sessionStorage.removeItem('alarmCall')
+  sessionStorage.clear()
   hashHistory.push('/login')
 }
 

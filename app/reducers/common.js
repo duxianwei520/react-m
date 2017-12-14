@@ -1,22 +1,6 @@
 import { handleActions } from 'redux-actions'
 import { hasResponseError } from 'utils'
 
-// 登陆返回结果
-const loginState = () => ({ })
-export const loginResponse = handleActions({
-  'request login'(state, action) {
-    return { ...state, loading: true }
-  },
-  'receive login'(state, action) {
-    // eslint-disable-next-line no-unused-vars
-    const { req, res } = action.payload
-    if (hasResponseError(res)) {
-      return { ...state, loading: false }
-    }
-    return { data: res, loading: false }
-  },
-}, loginState())
-
 // 获取用户信息返回结果
 const staffResult = () => ({ })
 export const staffResponse = handleActions({
@@ -50,3 +34,13 @@ export const navResult = handleActions({
     return { data: res, loading: false }
   },
 }, navData())
+
+// 当前要调用的分页动画效果
+const pageTransitionInit = () => ({
+  animateType: 'normal',
+})
+export const pageTransitionResponse = handleActions({
+  'pageTransition'(state, action) {
+    return { ...state, animateType: action.payload }
+  },
+}, pageTransitionInit())
