@@ -64,10 +64,75 @@ body,
   -ms-flex: 1;
   flex: 1;
 }
-#root {
-  width: 100%;
-  height: 100%;
+/*路由切换动画——改变透明度*/
+.normal-enter {
   position: absolute;
   top: 0;
-  left: 0;
+  opacity: 0;
+  z-index: 10000;
+}
+.normal-enter.normal-enter-active {
+  opacity: 1;
+  transition: all 0.4s ease-in;
+}
+.normal-leave {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+}
+.normal-leave.normal-leave-active {
+  opacity: 0;
+  transition: all 0.4s ease-out;
+}
+/*路由切换动画——左移动*/
+.left-enter {
+  position: absolute;
+  top: 0;
+  background: #fff;
+  z-index: 10000;
+  opacity: 1;
+  transform: translateX(100%);
+}
+.left-enter.left-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+.left-leave {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  transform: translateX(0);
+}
+.left-leave.left-leave-active {
+  opacity: 1;
+  transform: translateX(-100%);
+  transition: all 0.4s ease-out;
+}
+/*路由切换动画——右移动*/
+.right-enter {
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%);
+}
+.right-enter.right-enter-active {
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+.right-leave {
+  position: absolute;
+  top: 0;
+  background: #fff;
+  z-index: 10000;
+  opacity: 1;
+  transform: translateX(0);
+}
+.right-leave.right-leave-active {
+  opacity: 1;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+}
+/* 路由切换动画——改变透明度 end */
+#welcome .slider {
+  height: 200px;
 }

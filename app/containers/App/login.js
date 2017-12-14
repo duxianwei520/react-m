@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { hashHistory, Link } from 'react-router'
 import { List, InputItem, WhiteSpace, Button } from 'antd-mobile'
 import { createForm } from 'rc-form'
+import * as global from 'actions/global'
 
 @createForm()
 
@@ -12,7 +13,9 @@ import { createForm } from 'rc-form'
     (state, props) => ({
       config: state.config,
       loginResponse: state.loginResponse,
-    })
+      global: state.global,
+    }),
+    dispatch => bindActionCreators({ ...global }, dispatch)
 )
 
 export default class Login extends Component {
@@ -24,6 +27,9 @@ export default class Login extends Component {
     }
   }
 
+  componentWillMount() {
+    // console.log(this.props.currentAnimate('right'))
+  }
 
   handleClick = () => {
     this.customFocusInst.focus();
@@ -31,6 +37,7 @@ export default class Login extends Component {
 
   render() {
     const { getFieldProps } = this.props.form
+    // console.log(this.props)
     return (
       <div className="login">
         <List renderHeader={() => '登录'}>
@@ -51,7 +58,11 @@ export default class Login extends Component {
               style={{ width: '100%', color: '#108ee9', textAlign: 'center' }}
               // onClick={this.handleClick}
             >
-              <Button type="primary" href="#/welcome">登录</Button>
+              <Button
+                type="primary"
+                href="#/welcome"
+                onClick={() => this.props.currentAnimate('left')}
+              >登录</Button>
             </div>
           </List.Item>
         </List>

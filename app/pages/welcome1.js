@@ -2,7 +2,7 @@
  * @Author: dupi
  * @Date: 2017-06-28 17:16:12
  * @Last Modified by: duxianwei
- * @Last Modified time: 2017-12-14 11:15:40
+ * @Last Modified time: 2017-12-14 11:14:18
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -25,9 +25,9 @@ export default class app extends Component {
       data: ['', '', ''],
       imgHeight: 176,
       list: [
-        { type: 'check-circle', name: '商业金融' },
-        { type: 'check', name: '历史文学' },
-        { type: 'check-circle-o', name: '法律文献' },
+        { type: 'check-circle', name: '商业金融1' },
+        { type: 'check', name: '历史文学1' },
+        { type: 'check-circle-o', name: '法律文献1' },
       ],
     }
   }
@@ -79,14 +79,8 @@ export default class app extends Component {
           <Button
             type="primary"
             href="#/login"
-            onClick={() => this.props.currentAnimate('right')}
-          >退出</Button>
-          <WhiteSpace />
-          <Button
-            type="primary"
-            href="#/login"
             onClick={() => this.props.currentAnimate('normal')}
-          >welcome1</Button>
+          >退出</Button>
           <WhiteSpace />
         </WingBlank>
       </div>
