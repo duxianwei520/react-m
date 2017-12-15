@@ -28,11 +28,11 @@ const Login = (location, cb) => {
 
 /* 进入路由的判断*/
 function isLogin(nextState, replaceState) {
-  const token = sessionStorage.getItem('token')
-  if (!token) {
+  // const token = sessionStorage.getItem('token')
+  // if (!token) {
     // replaceState('/login')
     // hashHistory.push('/login')
-  }
+  // }
 }
 
 const routes = (

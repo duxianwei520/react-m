@@ -26,7 +26,7 @@ export default class Login extends Component {
 
   // region
   handleClick = () => {
-    this.customFocusInst.focus();
+    this.customFocusInst.focus()
   }
   // endregion
 
