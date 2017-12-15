@@ -63,13 +63,15 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 这套框架我们前端部门10个人已经在开发过大大小小十几个项目了，表示还是不错的，兼容性我们没有特别的测试，主流的现代的浏览器功能基本没问题，测试过Firefox跟Safari，现在把web mobile端的框架也开源出来，主要是加入了过场动画以及更换了UI框架，后续我们会继续维护
 
+Mobile端，大家可以看构建好的包大小，经过gzip压缩之后，公共文件包是110.41K，在现在4G的网络环境下，问题不大，然后就是每个业务自己的业务js包了
+
 
 ## 部分截图
 
 
 ### 页面切换
 
-<img src="https://github.com/duxianwei520/react-m/blob/master/screenshots/list.gif" width="408" height="560"/>
+<img src="https://github.com/duxianwei520/react-m/blob/master/screenshots/login.gif" width="408" height="560"/>
 
 
 ### 构建完成的包的分析截图
