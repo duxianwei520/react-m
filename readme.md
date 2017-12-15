@@ -76,7 +76,7 @@ Mobile端，大家可以看构建好的包大小，经过gzip压缩之后，公�
 
 ### 构建完成的包的分析截图
 
-<img src="https://github.com/duxianwei520/react-m/blob/master/screenshots/analysis.png" width="1101" height="555"/>
+<img src="https://github.com/duxianwei520/react-m/blob/master/screenshots/analysis.gif" width="1101" height="555"/>
 
 
 
