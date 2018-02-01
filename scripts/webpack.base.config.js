@@ -57,7 +57,7 @@ const webpackConfigBase = {
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=8192',
+        loader: 'url-loader?name=[name].[ext]&limit=8192',
       },
       {
         test: /\.(woff|eot|ttf|svg|gif)$/,

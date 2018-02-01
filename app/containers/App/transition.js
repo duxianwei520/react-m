@@ -30,6 +30,7 @@ export default class App extends Component {
     const { pageTransitionResponse } = this.props
     return (
       <ReactCSSTransitionGroup
+        className="transition"
         component="div"
         transitionName={pageTransitionResponse.animateType || 'normal'}
         transitionEnterTimeout={400}
