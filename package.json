@@ -46,7 +46,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "antd-mobile": "^2.1.8",
+    "antd-mobile": "^2.2.2",
     "axios": "^0.18.0",
     "prop-types": "^15.6.1",
     "rc-form": "^2.2.0",
