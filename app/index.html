@@ -1,16 +1,90 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>肚小肚</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-  <script>
-    if(!window.Promise) {
-      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scale=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>直播应用</title>
+    <style>
+        .app-loading {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .loading-text {
+            width: 80%;
+            margin: 0 auto;
+            filter: drop-shadow(0px -1px 2px) opacity(0.85);
+        }
+
+        .loading-dot {
+            margin-top: 26px;
+        }
+
+        .loading-dot span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #d6d6d6;
+            animation-name: loading;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        .loading-dot span:first-child {
+            animation-delay: 0ms;
+        }
+
+        .loading-dot span:nth-child(2) {
+            animation-delay: 300ms;
+        }
+
+        .loading-dot span:last-child {
+            animation-delay: 600ms;
+        }
+
+        @keyframes loading {
+            0% {
+                background: #378ce7;
+            }
+            100% {
+                background: #d6d6d6;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="root" id="root"></div>
+    <div id="root">
+        <div class="app-loading">
+            <p class="loading-text">
+                <?xml version="1.0" encoding="utf-8"?>
+                <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 152.7 52.7" style="enable-background:new 0 0 152.7 52.7;" xml:space="preserve">
+                <style type="text/css">
+                    .st0{fill:#F2F2F2;}
+                    .st1{font-family:'LiSu';}
+                    .st2{font-size:35.4497px;}
+                </style>
+                <text id="XMLID_1_" transform="matrix(0.9976 0 0 1 5.4549 37.1312)" class="st0 st1 st2">直播应用</text>
+                </svg>
+            </p>
+            <p class="loading-dot">
+                <span></span>
+                <span></span>
+                <span></span>
+            </p>
+        </div>
+    </div>
+    <div id="modal-root"></div>
 </body>
+<!-- <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script> -->
+
 </html>

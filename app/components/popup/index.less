@@ -1,0 +1,72 @@
+/*
+弹出层组件样式
+*/
+
+@import '../style/theme.less';
+.qqb-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation-name: popupOpacity;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  overflow: hidden;
+  .popup-content {
+    background-color: @page-back-color;
+    height: 100%;
+    animation-name: popupContent;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform-origin: left center;
+    overflow-y: auto;
+  }
+  .popup-content.exit {
+    animation-name: popupContentExit;
+  }
+}
+
+.qqb-popup-container.exit {
+  animation-name: popupOpacityExit;
+}
+
+@keyframes popupOpacity {
+  0% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes popupOpacityExit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.01;
+  }
+}
+
+@keyframes popupContent {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes popupContentExit {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}

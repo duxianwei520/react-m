@@ -1,0 +1,88 @@
+/**
+过渡动画
+*/
+
+@transition-enter-duration: 250ms;
+@transition-enter-delay: 300ms;
+@transition-exit-duration: 250ms;
+@transition-tb-distance: 10px;
+@transition-ease: ease-in-out;
+@box-shadow-color: #ccc;
+.transition-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .transition-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto; // -webkit-overflow-scrolling: touch;
+  }
+  /*=======上下淡入淡出 start========*/
+  .transitionAction-fade-tb-enter {
+    opacity: 0.01;
+    transform: translate3d(0, @transition-tb-distance, 0);
+  }
+  .transitionAction-fade-tb-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all @transition-enter-duration @transition-enter-delay @transition-ease;
+  }
+  .transitionAction-fade-tb-exit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .transitionAction-fade-tb-exit-active {
+    opacity: 0.01;
+    transform: translate3d(0, @transition-tb-distance, 0);
+    transition: all @transition-exit-duration @transition-ease;
+  }
+  /*=======上下淡入淡出 end========*/
+  /*=======左到右淡入淡出 start========*/
+  .transitionAction-fade-ltr-enter {
+    opacity: 0.01;
+    transform: translate3d(-100%, 0, 0);
+    z-index: 99;
+  }
+  .transitionAction-fade-ltr-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all @transition-enter-duration @transition-ease;
+    box-shadow: 2px 0 5px @box-shadow-color;
+  }
+  .transitionAction-fade-ltr-exit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    z-index: 98;
+  }
+  .transitionAction-fade-ltr-exit-active {
+    opacity: 0.01;
+    transform: translate3d(-5%, 0, 0);
+    transition: all @transition-exit-duration @transition-ease;
+  }
+  /*=======左到右淡入淡出 end========*/
+  /*=======右到左淡入淡出 start========*/
+  .transitionAction-fade-rtl-enter {
+    opacity: 0.01;
+    transform: translate3d(100%, 0, 0);
+    z-index: 99;
+  }
+  .transitionAction-fade-rtl-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all @transition-enter-duration @transition-ease;
+    box-shadow: -2px 0 5px @box-shadow-color;
+  }
+  .transitionAction-fade-rtl-exit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    z-index: 98;
+  }
+  .transitionAction-fade-rtl-exit-active {
+    opacity: 0.01;
+    transform: translate3d(5%, 0, 0);
+    transition: all @transition-exit-duration @transition-ease;
+  }
+  /*=======右到左淡入淡出 end========*/
+}

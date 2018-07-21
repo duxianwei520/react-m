@@ -5,7 +5,7 @@
 
 ## 技术栈
 
-react + redux + react-router + webpack + fetch + less
+react16.x+  + react-router4.x + webpack4.x + axios + less
 
 
 

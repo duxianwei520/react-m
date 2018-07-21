@@ -1,19 +1,24 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
-  "plugins": [
-    "espower", 
-    "transform-runtime", 
-    "transform-decorators-legacy", 
-    ["import", 
-      [
-        {
-          "libraryName": "antd-mobile",
-          "style": "css"
-        }
-      ]
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "chrome": 42
+                }
+            }
+        ],
+        "react",
+        "stage-0"
+    ],
+    "plugins": [
+        "transform-decorators-legacy",
+        [
+            "import",
+            {
+                "libraryName": "antd-mobile",
+                "style": true
+            }
+        ]
     ]
-  ],
-  "env": {
-      
-  }
 }

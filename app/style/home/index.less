@@ -1,0 +1,95 @@
+/*
+ * @Author: hy 
+ * @Date: 2018-04-28 10:27:42 
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-06-30 20:47:12
+ * 首页样式
+ */
+
+@import '../theme.less';
+@icon-width: 56px;
+@icon-height: 56px;
+.home-wrap {
+  height: 100%;
+}
+
+.home-list-box {
+  display: flex;
+  flex-wrap: wrap;
+  .home-list-item {
+    width: 33.33%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: @space-middle @space-sm;
+    &:active {
+      background-color: @active-back;
+    }
+    .list-item-icon {
+      width: @icon-width;
+      height: @icon-height;
+    }
+    .list-item-text {
+      margin-top: @space-base;
+      color: @text-color-bold;
+      font-size: @font-size-base;
+      text-align: center;
+    }
+  }
+}
+
+// 用户中心
+.user-info-pop {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // padding: @space-normal;
+  .userInfo-header {
+    flex-basis: 30%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: @common-back-blue-color;
+    justify-content: center;
+    .userInfo-header-avatar {
+      border-radius: 50%;
+      width: 110px;
+      overflow: hidden;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 90%;
+      }
+    }
+    .userInfo-header-text {
+      color: @text-color-white;
+    }
+  }
+  .userInfo-content {
+    flex: auto;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background: @background-color-content;
+    .list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: @space-normal @space-base;
+      color: @text-color-bold;
+      background:@body-background;
+      a {
+        color: @text-color-blue;
+      }
+    }
+    // .list-item:first-child {
+    //   background: @active-back;
+    // }
+  }
+  .qqbicon.qqbicon-off{
+    margin-right: @space-base ;
+  }
+}

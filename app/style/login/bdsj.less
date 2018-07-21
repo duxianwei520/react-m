@@ -1,0 +1,39 @@
+/*
+ * @Author: hy 
+ * @Date: 2018-05-02 11:18:20 
+ * @Last Modified by: hy
+ * @Last Modified time: 2018-05-02 11:52:44
+ */
+
+// 绑定手机样式
+@import '../theme.less';
+.bdsj-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 @space-lg;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .item {
+    align-self: stretch;
+    text-align: center;
+    .img-lock {
+      width: 80%;
+    }
+    .bdsj-title {
+      font-size: @font-size-hg;
+      letter-spacing: 1px;
+    }
+    .bdsj-number {
+      font-size: @font-size-hg;
+      color: @text-color-bold;
+    }
+  }
+  .item.item2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

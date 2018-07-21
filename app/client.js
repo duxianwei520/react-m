@@ -1,25 +1,23 @@
-import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router } from 'react-router'
-import { Provider } from 'react-redux'
-import { syncHistoryWithStore } from 'react-router-redux'
-import './config'
-import routes from './routes'
-import configure from './store/configureStore'
-import myhistory from './history'
-
-const store = configure({ config: global.$GLOBALCONFIG })
-const history = syncHistoryWithStore(myhistory, store)
-// history.listen(location => console.log('location:', location))
-// history.listen(function (location) { return location })
-
+import Routes from './routes'
+import {
+  HashRouter as Router
+} from 'react-router-dom'
+import { Provider as StoreProvider } from '@components/store'
+import CatchError from '@components/catchError'
+import './style/index.js'
+// 全局store初始值
+const store = {}
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history} >
-        { routes }
+  <StoreProvider store={store}>
+    <Router>
+      <CatchError>
+        {Routes}
+      </CatchError>
     </Router>
-  </Provider>,
+  </StoreProvider>
+  ,
   document.getElementById('root')
-);
+)

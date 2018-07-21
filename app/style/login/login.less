@@ -1,0 +1,93 @@
+/*
+ * @Author: hy 
+ * @Date: 2018-05-02 10:46:20 
+ * @Last Modified by: hy
+ * @Last Modified time: 2018-05-16 14:13:47
+ * 登录样式
+ */
+
+@import '../theme.less';
+@border: 1px solid #ccc;
+.login-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: @common-back-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .reset-inputItem.am-list-item .am-input-control input {
+    // font-size: @font-size-lg;
+    text-align: left;
+  }
+  img {
+    width: 100%;
+  }
+   ::-webkit-input-placeholder {
+    text-align: start
+  }
+  .login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .login-header-logo, .login-header-text {
+      width: 100%;
+    }
+    flex-basis: 50%;
+
+  }
+  .login-content {
+    width: 100%;
+    flex-basis: 50%;
+    position: relative;
+    z-index: 2;
+    padding: 0 @space-lg;
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: .2em;
+      font-size: 32px;
+      color: rgba(0, 0, 0, 0.65);
+    }
+    .login-form {
+      .login-form-forgot {
+        float: right;
+      }
+      .login-form-button {
+        width: 100%;
+      }
+    }
+    .content-card {
+      transition-delay: 250ms;
+      transition-duration: 350ms;
+      transition-timing-function: ease-out;
+    }
+    .content-card-hide {
+      opacity: 0;
+      transform: translateY(50%);
+      position: absolute;
+      top: 0;
+      transition: all 250ms ease-out;
+      z-index: -1;
+      left: 2.5rem;
+      right: 2.5rem;
+    }
+  }
+  .login-content:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    content: ''; 
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    opacity: 0.15;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,72 @@
+/*
+抽屉组件样式
+*/
+
+.qqb-drawer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation-name: drawerOpacity;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .drawer-content {
+    width: 75%;
+    background-color: white;
+    height: 100%;
+    animation-name: drawerContent;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform-origin: left center;
+  }
+  .drawer-content.exit {
+    animation-name: drawerContentExit;
+  }
+}
+
+.qqb-drawer-container.exit {
+  animation-name: drawerOpacityExit;
+}
+
+@keyframes drawerOpacity {
+  0% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes drawerOpacityExit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.01;
+  }
+}
+
+@keyframes drawerContent {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes drawerContentExit {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}

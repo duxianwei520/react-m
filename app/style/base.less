@@ -1,104 +1,455 @@
-// @import "./iconfont.less";
+/*
+公共基础样式
+样式重置
+*/
 
-html,body {
+@import './theme.less';
+html {
+  font-size: 62.5%;
+}
+
+// 媒体查询
+@media only screen and (min-width:768px) and (max-width:1024px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@media only screen and (min-width:1024px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+* {
+  box-sizing: border-box; // -webkit-user-select: none;
+}
+
+html, body {
+  background-color: transparent;
+  font-family: @font-family;
+  color: @text-color;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased !important;
   height: 100%;
-  -webkit-tap-highlight-color: transparent;
-  overflow-x: hidden;
 }
-body { font-family: -apple-system-font, "Helvetica Neue", Helvetica, sans-serif;}
-body { background-color: #F8F8F8;}
-#container{   
+
+html, body, div, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul li, dl dt {
+  list-style: none
+}
+
+#root {
   height: 100%;
-  position: relative;
-  background-color: #f5f5f9;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  font-size: @font-size-lg;
 }
-#root{ width: 100%; height: 100%; }
 
-/*路由切换动画——改变透明度*/
-.normal-enter {
-  position: absolute;
+
+/* overflow text*/
+
+.textOverflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* 404 */
+
+.nofound-wrap {
+  text-align: center;
+}
+
+.red {
+  color: @red;
+}
+
+// 必选*标志
+.reset-item-required::before {
+  content: '*';
+  color: @red;
+  line-height: 1;
+  font-size: 1.4rem;
+  margin-right: 0.4rem;
+  font-family: SimSun;
+  display: inline-block;
+}
+
+
+/* icon定义*/
+
+.qqbicon {
+  display: inline-block;
+  width: 19px;
+  height: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  vertical-align: middle;
+}
+
+// 暂无数据
+.noinfo {
+  color: @text-color;
+  font-size: @font-size-base;
+  text-align: center;
+  padding: @space-base 0;
+}
+
+
+// 用户
+.qqbicon.qqbicon-user {
+  background-image: url(../resource/image/user.png);
+  height: 19px;
+}
+
+
+// 登录user icon
+.qqbicon.qqbicon-username {
+  width: 15px;
+  height: 17px;
+  background-image: url(../resource/image/icon/user.png);
+}
+
+// 后退
+.qqbicon.qqbicon-back {
+  width: 15px;
+  height: 17px;
+  background-image: url(../resource/image/icon/back.png);
+}
+
+// 登录password icon
+.qqbicon.qqbicon-password {
+  width: 14px;
+  height: 17px;
+  background-image: url(../resource/image/icon/password.png);
+}
+
+// 个人中心 关闭 icon
+.qqbicon.qqbicon-off {
+  width: 20px;
+  height: 20px;
+  background-image: url(../resource/image/icon/off.png);
+}
+
+
+
+/* 公共样式*/
+
+.page-except-header-content {
+  height: 100%;
+  padding-top: @navbar-height;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-wrap {
+  height: 100%;
+  background: @page-back-color;
+}
+
+// radio样式
+@radio-checked-color: #3f51b5;
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 4.4rem;
+  line-height: 4.4rem;
+  background: white;
+  border-bottom: 1px solid @border-color-base;
+  .radio-title {
+    color: @text-color-bold;
+    margin-right: @space-normal;
+  }
+  .radio-item {
+    color: @text-color-bold;
+    .am-radio {
+      border-radius: 50%;
+      border: 1px solid @border-color-base;
+      margin-right: 7px;
+      top: -2px;
+    }
+    .am-radio-checked {
+      border: 1px solid @radio-checked-color;
+      .am-radio-inner {
+        right: -1px;
+      }
+      .am-radio-inner::after {
+        background: @radio-checked-color;
+        border-radius: 50%;
+        border-style: none;
+        border-width: 0;
+        border-color: transparent;
+        top: 2.73px;
+        right: 4.2px;
+        width: 7px;
+        height: 7px;
+        transform: none;
+      }
+    }
+  }
+}
+
+// 水平方式
+.radio-group-horizontal {
+  padding: 0 @space-normal;
+  align-items: center;
+  .radio-item {
+    margin-right: 1rem;
+  }
+}
+
+// 垂直方式radio
+.radio-group-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: stretch;
+  .radio-item {
+    border-bottom: 1px solid @border-color-base;
+    padding: 0 @space-normal;
+  }
+   :last-child {
+    border-bottom: none;
+  }
+}
+
+// picker
+.reset-picker-listitem {
+  border-bottom: 1px solid @border-color-base;
+}
+
+// 通用按钮样式
+.reset-btn {
+  // display: block;
+  border-radius: @border-radius-base; // border: 1px solid #6a7179 !important;
+}
+
+// 按钮禁用时
+.reset-btn.am-button-disabled {
+  background: #bbbbbb;
+  border: 1px solid #b5babf !important;
+  span {
+    color: @text-color-white;
+  }
+}
+
+.reset-btn.am-button-active {
+  border: 1px solid #b5babf !important;
+}
+
+// 去掉按钮灰色边框 
+.reset-btn.am-button::before {
+  border: none !important;
+}
+
+.reset-btn.am-button::after {
+  border: none !important;
+}
+
+.reset-btn {
+  border: none !important;
+}
+
+.reset-btn.am-button {
+  font-size: @font-size-hg;
+}
+
+.reset-btn-primary {
+  background: @common-back-blue-color;
+  color: @text-color-white;
+}
+
+.reset-btn-normal {
+  background: white;
+  color: @text-color-bold;
+  border: 1px solid @border-color-base!important;
+}
+
+// 通用输入框
+.reset-inputItem.am-list-item {
+  border-bottom: 1px solid @border-color-base !important;
+  .am-list-line {
+    border: none !important;
+  }
+}
+
+.am-list-item.am-textarea-item {
+  border-bottom: 1px solid @border-color-base;
+}
+
+.reset-inputItem.am-list-item:not(:last-child) .am-list-line::after {
+  background: white !important;
+}
+
+.am-list-body::before, .am-list-body::after {
+  height: 0!important;
+  background: none !important;
+}
+
+.am-list-item .am-list-line .am-list-extra {
+  // overflow: visible !important;
+  flex-grow: 1;
+}
+
+.reset-inputItem.am-list-item {
+  border-radius: 0;
+}
+
+.reset-inputItem-radius.am-list-item {
+  border-radius: @border-radius-base !important;
+}
+
+.reset-inputItem {
+  .am-input-extra {
+    max-height: initial;
+    height: auto;
+    overflow: initial;
+  }
+}
+
+.reset-inputItem.inputItem-textRight {
+  input {
+    text-align: right;
+  }
+}
+
+.reset-inputItem.red {
+  input {
+    color: @red;
+  }
+}
+
+.am-list-item {
+  border-radius: @border-radius-base;
+}
+
+.am-list-item.am-list-item-middle, .am-list-item.am-input-item {
+  padding-left: @space-normal;
+}
+
+.am-list-item .am-list-line, .am-list-item.am-textarea-item {
+  padding-right: @space-normal;
+}
+
+// 左滑删除
+.reset-SwipeAction {
+  display: flex;
+  align-items: center;
+  .SwipeAction-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    margin-left: 1rem;
+    max-width: 80%;
+    span:first-child {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    span:last-child {
+      color: @text-color;
+      font-size: @font-size-base;
+      word-break: break-all;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+// 获取验证码按钮
+.btn-getCode {
+  background: @common-btn-back-color;
+  padding: @space-sm;
+  color: white;
+  border-radius: @border-radius-base;
+  font-size: @font-size-base;
+}
+
+// 分割线，中间是文字
+.divider {
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  .line {
+    border-top: 1px solid @text-color;
+    flex: auto;
+    flex-grow: 2;
+    opacity: 0.5;
+  }
+  .content {
+    padding: 0 0.2rem;
+    flex: auto;
+    flex-grow: 1;
+    color: @text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// 列表样式
+.am-list-item .am-list-line .am-list-content {
+  font-size: @font-size-lg;
+}
+
+.am-list-item .am-input-label {
+  font-size: @font-size-lg;
+}
+
+.am-list-item .am-list-line .am-list-extra {
+  font-size: @font-size-lg;
+}
+
+// 所有的输入框值在右边
+.reset-inputItem.am-list-item .am-input-control input {
+  font-size: @font-size-lg;
+  text-align: right;
+}
+
+.am-textarea-label {
+  white-space: pre-wrap!important;
+}
+
+ ::-webkit-input-placeholder {
+  text-align: right
+}
+
+.am-textarea-control textarea {
+  font-size: @font-size-lg;
+}
+
+.am-textarea-label {
+  font-size: @font-size-lg;
+}
+
+.am-textarea-control textarea {
+  font-size: @font-size-lg;
+}
+
+
+/*去掉下拉框和日期的底部边框*/
+
+html:not([data-scale]) .am-list-body div:not(:last-child) .am-list-line::after {
+  height: 0
+}
+
+
+/*遮罩层*/
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .9);
+  position: fixed;
   top: 0;
-  opacity: 0;
-  z-index: 10000;
-}
-
-.normal-enter.normal-enter-active {
-  opacity: 1;
-  transition: all 0.4s ease-in;
-}
-
-.normal-leave {
-  position: absolute;
-  top: 0;
-  opacity: 1;
-}
-
-.normal-leave.normal-leave-active {
-  opacity: 0;
-  transition: all .4s ease-out;
-}
-
-/*路由切换动画——左移动*/
-.left-enter {
-  position: absolute;
-  top: 0;
-  background: #fff;
-  z-index: 10000;
-  opacity: 1;
-  transform: translateX(100%);
-}
-
-.left-enter.left-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 0.4s ease-out;
-}
-
-.left-leave {
-  position: absolute;
-  top: 0;
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.left-leave.left-leave-active {
-  opacity: 1;
-  transform: translateX(-100%);
-  transition: all 0.4s ease-out;
-}
-
-/*路由切换动画——右移动*/
-.right-enter {
-  position: absolute;
-  top: 0;
-  transform: translateX(-100%);
-}
-
-.right-enter.right-enter-active {
-  transform: translateX(0);
-  transition: all 0.4s ease-out;
-}
-
-.right-leave {
-  position: absolute;
-  top: 0;
-  background: #fff;
-  z-index: 10000;
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.right-leave.right-leave-active {
-  opacity: 1;
-  transform: translateX(100%);
-  transition: all 0.4s ease-out;
-}
-/* 路由切换动画——改变透明度 end */
-
-#welcome{
-  .slider{ height: 200px;}
+  left: 0;
+  z-index: 999;
 }
