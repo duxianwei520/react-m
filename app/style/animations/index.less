@@ -1,0 +1,36 @@
+// 动画
+.animation-in {
+  animation-duration: 250ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-name: slideInRight-radium-animation-szdp;
+}
+
+.animation-out {
+  animation-duration: 250ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-name: slideOutRight-radium-animation-szdp;
+}
+
+@keyframes slideInRight-radium-animation-szdp {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutRight-radium-animation-szdp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
