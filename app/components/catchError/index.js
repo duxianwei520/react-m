@@ -1,8 +1,8 @@
 /*
  * @Author: hy 
  * @Date: 2018-05-07 15:08:19 
- * @Last Modified by: hy
- * @Last Modified time: 2018-05-07 15:35:22
+ * @Last Modified by: dupi
+ * @Last Modified time: 2021-03-31 10:35:55
  * 错误拦截组件
  */
 
@@ -41,7 +41,7 @@ export default class CatchError extends Component {
       return (
         <div className="carchError-wrap">
           <WingBlank>
-            <h2>抱歉，应用弱不禁风，崩溃了...</h2>
+            <h2>抱歉，应用崩溃了...</h2>
             <details className="error-details">
               <summary>查看崩溃详情</summary>
               <h5>错误信息:</h5>
