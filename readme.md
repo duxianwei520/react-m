@@ -24,6 +24,8 @@ npm start (运行本地开发环境)
 
 npm run build (打包)
 
+npm run mock (本地测试接口)
+
 ```
 
 
@@ -46,6 +48,8 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ## 功能一览
 - [√] 登录
 - [√] 主页
+- [√] 业务模块资源按需加载
+- [√] mock模拟后端接口
 - [√] redux完整示范
 - [√] axios数据跨域的设置
 - [√] 页面切换的过场动画

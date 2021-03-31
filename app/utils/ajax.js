@@ -8,7 +8,6 @@ import {
   suffix,
   timeout
 } from '@config/base'
-import { returnStatus } from '@config/code'
 
 // axios配置
 const axiosBaseConfig = {
@@ -86,11 +85,11 @@ const axiosPost = (url, config = {}, reqData, resolve, reject) => {
     .then(
       resp => {
         switch (resp.status) {
-          case returnStatus.NORMAL:
+          case 200:
             // 正常数据
             resolve && resolve(resp)
             break
-          case returnStatus.NOT_LOGIN:
+          case 401:
             Toast.hide()
             Modal.alert('提示', resp.msg || '登录过期', [
               {
@@ -113,10 +112,10 @@ const axiosPost = (url, config = {}, reqData, resolve, reject) => {
 }
 
 // 基础post，postjson文本数据
-const createHttpPost = (url, target) => {
+const createHttpPost = (url, options) => {
   let newUrl
-  if (target) {
-    newUrl = `${target}${url}${suffix}`
+  if (options && options.baseURL) {
+    newUrl = `${options.baseURL}${url}${suffix}`
   } else {
     newUrl = `${prefix}${url}${suffix}`
   }
