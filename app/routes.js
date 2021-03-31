@@ -1,6 +1,3 @@
-/**
- * 根路由
- */
 
 import React from 'react'
 import {
@@ -14,7 +11,7 @@ import { example} from '@pages/example'
 import Transition from '@components/transition'
 
 const routes = (
-  <Transition >
+  <Transition>
     {/* 登录首页 */}
     <Route exact path="/login" component={login} />
     {/* app首页 */}
