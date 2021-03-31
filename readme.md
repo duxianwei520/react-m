@@ -24,10 +24,6 @@ npm start (运行本地开发环境)
 
 npm run build (打包)
 
-另开启一个命令窗口 启动node的本地json数据代理服务
-
-npm run mock (对，就是传说中的 mockjs http://highsea90.com/t/mock/)
-
 ```
 
 
@@ -48,13 +44,10 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 
 ## 功能一览
-- [√] 项目按路由模块加载
 - [√] 登录
-- [√] 欢迎主页
+- [√] 主页
 - [√] redux完整示范
-- [√] mockjs模拟后端返回接口
-- [√] fetch数据跨域的设置
-- [√] 实时的webpack包大小预览,方便优化
+- [√] axios数据跨域的设置
 - [√] 页面切换的过场动画
 
 
