@@ -43,7 +43,7 @@
     "mockjs": "^1.1.0",
     "nodemon": "^2.0.7",
     "open-browser-webpack-plugin": "0.0.5",
-    "postcss": "^7.0.27",
+    "postcss": "^8.2.10",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.2.4",
